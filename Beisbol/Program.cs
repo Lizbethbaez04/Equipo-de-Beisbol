@@ -18,6 +18,8 @@ namespace Beisbol
             equipos[0].Nombre = "Divos";
             equipos[0].Entrenador = "Armador Meza";
             equipos[0].CiudadOrigen = "Obregon";
+            equipos[0].estadio = new Estadio();
+            equipos[0].estadio.Nombre = "Estadio de Beis";
             equipos[0].Jugadores.Add(new Jugador("Pepe Molina"));
             equipos[0].Jugadores.Add(new Jugador("Emilio Rocha"));
             equipos[0].Jugadores.Add(new Jugador("Santos Felix"));
@@ -45,10 +47,18 @@ namespace Beisbol
 
             foreach(Equipo elemento in equipos)
             {
-                Console.WriteLine("Equipo: " + equipos);
+                Console.WriteLine("Equipo: " + elemento.Nombre);
                 foreach(Jugador elementoEquipo in elemento.Jugadores)
                 {
-                    Console.WriteLine("Jugador: " + equipo.Jugadores);
+                    Console.WriteLine("Jugador: " + elementoEquipo.Nombre);
+                    if(elemento.estadio !=null)
+                    {
+                        Console.WriteLine("Nombre Estadio: " + elemento.estadio.Nombre);
+                    }
+                    else
+                    {
+                        Console.WriteLine("El equipo no tiene estadio");
+                    }
                 }
             }
             Console.ReadLine();
